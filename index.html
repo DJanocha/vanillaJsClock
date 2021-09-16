@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current time is:</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="clock-border">
+      <div class="clock-arrow hour-arrow"></div>
+      <div class="clock-arrow minute-arrow"></div>
+      <div class="clock-arrow second-arrow"></div>
+    </div>
+    <script>
+      const hourArrowHandler = document.querySelector(".hour-arrow")
+      const minuteArrowHandler = document.querySelector(".minute-arrow")
+      const secondArrowHandler = document.querySelector(".second-arrow")
+
+      const tick = () => {
+        const newDate = new Date()
+        const seconds = newDate.getSeconds()
+        const minutes = newDate.getMinutes()
+        const hours = newDate.getHours()
+        console.log(`${hours}:${minutes}:${seconds}`)
+        hourArrowHandler.style.transform = `rotate(${90 + (360 / 24) * hours}deg)`
+        minuteArrowHandler.style.transform = `rotate(${90 + (360 / 60) * minutes}deg)`
+        secondArrowHandler.style.transform = `rotate(${90 + (360 / 60) * seconds}deg)`
+        document.title = `Current time is : ${hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`
+      }
+      setInterval(tick, 1000)
+    </script>
+  </body>
+</html>
