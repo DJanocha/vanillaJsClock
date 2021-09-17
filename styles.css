@@ -1,12 +1,8 @@
 body {
   height: 100vh;
-  /* width: 100vw; */
   background-image: linear-gradient(#f00, #00f);
 }
 .clock-border {
-  /* position: relative; */
-  /* top: 50%;
-  left: 50%; */
   transform: translate(50%, 50%);
   width: 20rem;
   height: 20rem;
@@ -18,9 +14,16 @@ body {
   top: 50%;
   height: 0.5rem;
   position: absolute;
-  background-color: black;
-  /* transform: rotate(90deg); */
-  transform: rotate(90deg);
   transform-origin: 100%;
   animation-timing-function: ease-in-out;
+}
+
+.hour-arrow {
+  background-color: black;
+}
+.minute-arrow {
+  background-color: rgba(46, 40, 40, 0.822);
+}
+.second-arrow {
+  background-color: rgba(119, 119, 119, 0.753);
 }
